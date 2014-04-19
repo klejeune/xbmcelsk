@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CCB8C46-C654-479F-95B3-1838E3668449}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Xbmcelsk.Lib</RootNamespace>
+    <AssemblyName>Xbmcelsk.Lib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Commands\AbstractCommand.cs" />
+    <Compile Include="Commands\AudioLibrary\GetArtistDetails.cs" />
+    <Compile Include="Commands\AudioLibrary\GetArtists.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\IError.cs" />
+    <Compile Include="Commands\IResult.cs" />
+    <Compile Include="Commands\Player\GetActivePlayers.cs" />
+    <Compile Include="Commands\Player\GetItem.cs" />
+    <Compile Include="Commands\Player\GetProperties.cs" />
+    <Compile Include="Commands\Player\GoTo.cs" />
+    <Compile Include="Commands\Player\Move.cs" />
+    <Compile Include="Commands\Result.cs" />
+    <Compile Include="Commands\Results\ArtistDetailsResult.cs" />
+    <Compile Include="Commands\Results\ArtistListReturn.cs" />
+    <Compile Include="Commands\Results\AudioDetailsArtist.cs" />
+    <Compile Include="Commands\Results\AudioDetailsBase.cs" />
+    <Compile Include="Commands\Results\AudioDetailsMedia.cs" />
+    <Compile Include="Commands\Results\AudioFieldsArtist.cs" />
+    <Compile Include="Commands\Results\ItemResult.cs" />
+    <Compile Include="Commands\Results\ItemDetailsBase.cs" />
+    <Compile Include="Commands\Results\LimitsReturned.cs" />
+    <Compile Include="Commands\Results\ListItemAll.cs" />
+    <Compile Include="Commands\Results\ListItemBase.cs" />
+    <Compile Include="Commands\Results\ListItemType.cs" />
+    <Compile Include="Commands\Results\ListSort.cs" />
+    <Compile Include="Commands\Results\MediaDetailsBase.cs" />
+    <Compile Include="Commands\Results\Player.cs" />
+    <Compile Include="Commands\Results\PlayerAudioStream.cs" />
+    <Compile Include="Commands\Results\PlayerAudioStreamExtended.cs" />
+    <Compile Include="Commands\Results\PlayerGoToParameter.cs" />
+    <Compile Include="Commands\Results\PlayerMoveDIrection.cs" />
+    <Compile Include="Commands\Results\PlayerPropertyName.cs" />
+    <Compile Include="Commands\Results\PlayerPropertyValue.cs" />
+    <Compile Include="Commands\Results\PlayerRepeat.cs" />
+    <Compile Include="Commands\Results\PlayerSubtitle.cs" />
+    <Compile Include="Commands\Results\PlayerType.cs" />
+    <Compile Include="Commands\Serializer.cs" />
+    <Compile Include="Commands\XbmcResult.cs" />
+    <Compile Include="Credentials.cs" />
+    <Compile Include="ICredentials.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserFriendly\Commands.cs" />
+    <Compile Include="UserFriendly\IAudioLibraryCommands.cs" />
+    <Compile Include="UserFriendly\IPlayerCommands.cs" />
+    <Compile Include="Xbmc.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
